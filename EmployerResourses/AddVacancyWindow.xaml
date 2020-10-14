@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="PskovUniversityCase.EmployerResourses.AddVacancyWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="PskovUniversityCase.EmployerResourses"
+	WindowStartupLocation="CenterScreen"
+	Height="385"
+	Width="570">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="0,2*"></RowDefinition>
+			<RowDefinition
+				Height="8*"></RowDefinition>
+			<RowDefinition
+				Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<StackPanel
+			Orientation="Horizontal"
+			Background="LightBlue">
+			<TextBlock
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Margin="10,0,0,0">Добавление вакансии</TextBlock>
+		</StackPanel>
+		<StackPanel
+			Orientation="Vertical"
+			Grid.Row="1">
+			<TextBlock>Введите краткое описание вакансии,которое будет отображаться в заголовке</TextBlock>
+			<TextBox
+				VerticalAlignment="Center"
+				HorizontalAlignment="Left"
+				Height="30"
+				Width="80" x:Name="textBoxHeader" />
+			<TextBlock>Введите текст вакансии</TextBlock>
+			<RichTextBox
+				VerticalAlignment="Center"
+				HorizontalAlignment="Left"
+				Height="120"
+				Width="200"
+				x:Name="richTextBoxText"/>
+			<Button
+				x:Name="buttonAddVacancy"
+				Click="buttonAddVacancy_Click">Добавить</Button>
+		</StackPanel>
+	</Grid>
+</Window>

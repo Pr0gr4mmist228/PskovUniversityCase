@@ -6,10 +6,11 @@ namespace PskovUniversityCase.DbEntities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("User")]
     public partial class User
     {
-    	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    	[Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public int Id { get; set; }
 
         [Required]
@@ -29,7 +30,7 @@ namespace PskovUniversityCase.DbEntities
         public virtual Role Role { get; set; }
 
         public virtual Student Student { get; set; }
-        
-		public virtual Employer Employer { get; set; }
+
+        public virtual Employer Employer { get; set; }
     }
 }

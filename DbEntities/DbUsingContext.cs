@@ -8,6 +8,6 @@ namespace PskovUniversityCase.DbEntities
 	/// </summary>
 	public class DbUsingContext
 	{
-		public static DbEntitiesContext db = new DbEntitiesContext();
+		public static DbEntitiesContext db { get; set; }
 	}
 }

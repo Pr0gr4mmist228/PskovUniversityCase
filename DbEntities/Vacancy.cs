@@ -22,6 +22,12 @@ namespace PskovUniversityCase.DbEntities
         [Required]
         public string Text { get; set; }
 
+        public decimal Salary { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime Date { get; set; }
+
         public virtual Organization Organization { get; set; }
+		public virtual Employer Employer { get; set; }
     }
 }

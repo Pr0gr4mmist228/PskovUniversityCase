@@ -13,9 +13,13 @@ namespace PskovUniversityCase.DbEntities
         public int Id { get; set; }
 
         public int GroupId { get; set; }
+        
+        public int? SummaryId { get; set; }
 
+        public virtual User User { get; set; }
+        
         public virtual Group Group { get; set; }
 
-        public virtual User Users { get; set; }
+        public virtual ICollection<Summary> Summary { get; set; }
     }
 }

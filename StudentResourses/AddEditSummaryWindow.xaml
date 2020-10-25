@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="PskovUniversityCase.StudentResourses.AddEditSummaryWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Резюме"
+	Width="718"
+	Height="394">
+	<Grid>
+		<TextBlock
+			Margin="5">Ваше резюме:</TextBlock>
+		<RichTextBox
+			x:Name="richSummaryText"
+			Margin="10,30,10,30" />
+		<Button
+			x:Name="buttonSaveSumm"
+			Click="ButtonSaveSumm_Click"
+			Width="70"
+			Height="20"
+			Grid.Column="0"
+			Grid.Row="0"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Bottom"
+			Margin="0,0,0,5"
+			BorderBrush="White">Сохранить</Button>
+	</Grid>
+</Window>

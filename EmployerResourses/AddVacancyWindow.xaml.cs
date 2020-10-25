@@ -12,6 +12,7 @@ using PskovUniversityCase.DbEntities;
 using PskovUniversityCase.EmployerResourses;
 using PskovUniversityCase.StudentResourses;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace PskovUniversityCase.EmployerResourses
 {
@@ -29,11 +30,13 @@ namespace PskovUniversityCase.EmployerResourses
 		{
 			try{
 			Vacancy newVacancy = new Vacancy{
-				OrganizationId = employer.Employer.OrganizationId,
-				EmployerId = employer.Id,
-				Header = textBoxHeader.Text,
-				Text = new TextRange(richTextBoxText.Document.ContentStart,richTextBoxText.Document.ContentEnd).Text,
-			};
+					OrganizationId = employer.Employer.OrganizationId,
+					EmployerId = employer.Id,
+					Header = textBoxHeader.Text,
+					Text = new TextRange(richTextBoxText.Document.ContentStart, richTextBoxText.Document.ContentEnd).Text,
+					Date = DateTime.Today.Date,
+					Salary = decimal.Parse(boxSalary.Text)
+				};
 			
 			DbUsingContext.db.Vacancy.Add(newVacancy);
 			DbUsingContext.db.SaveChanges();
@@ -44,6 +47,10 @@ namespace PskovUniversityCase.EmployerResourses
 			catch(Exception ex){
 				MessageBox.Show("Ошибка при создании вакансии "+ex.Message,"Ошибка",MessageBoxButton.OK,MessageBoxImage.Error);
 			}
+		}
+		void BoxSalary_TextInput(object sender, TextCompositionEventArgs e)
+		{
+			e.Handled = "1234567890".IndexOf(e.Text) < 0;
 		}
 	}
 }

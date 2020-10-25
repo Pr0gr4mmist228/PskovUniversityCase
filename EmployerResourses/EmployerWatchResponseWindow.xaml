@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="PskovUniversityCase.EmployerResourses.EmployerWatchResponseWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Width="609"
+	Height="377"
+	WindowStartupLocation="CenterScreen"
+	Title="Откликнувшиеся студенты">
+	<Window.Resources>
+		<DataTemplate
+			x:Key="listTemplate">
+			<StackPanel>
+				<TextBlock
+					x:Name="textStudent"
+					Text="{Binding Path=Student.User.Name}"></TextBlock>
+				<TextBlock
+					Text="{Binding Path=Vacancy.Header}"></TextBlock>
+				<StackPanel>
+					<Button
+						Tag="{Binding Id}"
+						x:Name="buttonAcceptStudent"
+						Click="ButtonAcceptStudent_Click">Принять студента</Button>
+					<Button
+						Tag="{Binding Id}"
+						x:Name="buttonCancelStudent"
+						Click="ButtonCancelStudent_Click">Отклонить студента</Button>
+				</StackPanel>
+			</StackPanel>
+		</DataTemplate>
+	</Window.Resources>
+	<Grid>
+		<ListBox
+			x:Name="responsesList"
+			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+			ItemTemplate="{StaticResource listTemplate}">
+			<ListBox.ItemsPanel>
+				<ItemsPanelTemplate>
+					<WrapPanel />
+				</ItemsPanelTemplate>
+			</ListBox.ItemsPanel>
+		</ListBox>
+	</Grid>
+</Window>

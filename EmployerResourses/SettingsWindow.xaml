@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="PskovUniversityCase.EmployerResourses.SettingsWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="PskovUniversityCase.EmployerResourses"
+	Width="650"
+	WindowStartupLocation="CenterScreen"
+	Height="502">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="1.22352941176471*" />
+			<RowDefinition
+				Height="8.98245614035087*" />
+			<RowDefinition
+				Height="0.790697674418605*" />
+		</Grid.RowDefinitions>
+		<StackPanel
+			Background="LightBlue">
+			<TextBlock>Настройки аккаунта</TextBlock>
+		</StackPanel>
+		<StackPanel
+			Orientation="Vertical"
+			Width="200"
+			Height="389"
+			Grid.Column="0"
+			Grid.Row="1"
+			Grid.RowSpan="2"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			Margin="0,0,0,0">
+			<StackPanel>
+				<TextBlock
+					TextAlignment="Center"
+					Width="120">Логин:</TextBlock>
+				<TextBox
+					x:Name="boxLogin"
+					Text="{Binding Path=Login}" />
+			</StackPanel>
+			<StackPanel
+				Margin="0,5,0,5">
+				<TextBlock
+					TextAlignment="Center">ФИО:</TextBlock>
+				<TextBox
+					x:Name="boxName"
+					Text="{Binding Path=Name}" />
+			</StackPanel>
+			<StackPanel>
+				<TextBlock
+					TextAlignment="Center">Пароль:</TextBlock>
+				<PasswordBox
+					x:Name="boxPassword" />
+			</StackPanel>
+			<StackPanel
+				Margin="0,5,0,5">
+				<TextBlock
+					TextAlignment="Center">Повторите пароль:</TextBlock>
+				<PasswordBox />
+			</StackPanel>
+			<StackPanel
+				Margin="0,5,0,5">
+				<TextBlock
+					TextAlignment="Center">Имя организации:</TextBlock>
+				<TextBox
+					x:Name="boxNameOrg"
+					Text="{Binding Path=Employer.Organization.Name}" />
+			</StackPanel>
+			<StackPanel
+				Margin="0,5">
+				<TextBlock
+					TextAlignment="Center">Тип организации:</TextBlock>
+				<ComboBox
+					x:Name="comboOrgType"
+					DisplayMemberPath="Type" />
+			</StackPanel>
+			<StackPanel
+				Margin="0,5">
+				<TextBlock
+					TextAlignment="Center">Телефон:</TextBlock>
+				<TextBox
+					x:Name="boxPhone"
+					Text="{Binding Path=Employer.Phone}" />
+			</StackPanel>
+			<StackPanel>
+				<TextBlock
+					TextAlignment="Center"
+					Margin="0,5,0,5">Email:</TextBlock>
+				<TextBox
+					Text="{Binding Path=Employer.Email}"
+					x:Name="boxEmail" />
+			</StackPanel>
+		</StackPanel>
+		<StackPanel
+			Margin="0,15,0,0"
+			VerticalAlignment="Bottom"
+			HorizontalAlignment="Center"
+			Grid.Row="1">
+			<Button
+				x:Name="buttonChangeData"
+				Click="ButtonChangeData_Click">Изменить данные</Button>
+		</StackPanel>
+	</Grid>
+</Window>

@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -73,33 +74,52 @@
     <ApplicationDefinition Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthPage.xaml.cs">
-      <DependentUpon>AuthPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DbEntities\DbEntitiesContext.cs" />
     <Compile Include="DbEntities\DbUsingContext.cs" />
     <Compile Include="DbEntities\Employer.cs" />
     <Compile Include="DbEntities\Group.cs" />
     <Compile Include="DbEntities\Organization.cs" />
+    <Compile Include="DbEntities\OrganizationType.cs" />
     <Compile Include="DbEntities\Role.cs" />
     <Compile Include="DbEntities\Student.cs" />
+    <Compile Include="DbEntities\Summary.cs" />
     <Compile Include="DbEntities\User.cs" />
     <Compile Include="DbEntities\Vacancy.cs" />
+    <Compile Include="DbEntities\VacancyResponding.cs" />
     <Compile Include="EmployerResourses\AddVacancyWindow.xaml.cs">
       <DependentUpon>AddVacancyWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EmployerResourses\ChangeVacancyWindow.xaml.cs">
+      <DependentUpon>ChangeVacancyWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EmployerResourses\EmployerAccountMenu.xaml.cs">
       <DependentUpon>EmployerAccountMenu.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EmployerResourses\EmployerWatchResponseWindow.xaml.cs">
+      <DependentUpon>EmployerWatchResponseWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EmployerResourses\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Frames\Frames.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="MainResourses\AuthPage.xaml.cs">
+      <DependentUpon>AuthPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainResourses\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RegistrationPage.xaml.cs">
+    <Compile Include="MainResourses\OrganizationRegistrationPage.xaml.cs">
+      <DependentUpon>OrganizationRegistrationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainResourses\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -107,21 +127,46 @@
       <DependentUpon>AccountMenu.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VacancyListPage.xaml.cs">
+    <Compile Include="StudentResourses\AddEditSummaryWindow.xaml.cs">
+      <DependentUpon>AddEditSummaryWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StudentResourses\ImageConverter.cs" />
+    <Compile Include="StudentResourses\StudentSettingsWindow.xaml.cs">
+      <DependentUpon>StudentSettingsWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StudentResourses\StudentWatchStatusWindow.xaml.cs">
+      <DependentUpon>StudentWatchStatusWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StudentResourses\VacancyListPage.xaml.cs">
       <DependentUpon>VacancyListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StudentResourses\WatchVacancyWindow.xaml.cs">
+      <DependentUpon>WatchVacancyWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="AuthPage.xaml">
+    <Page Include="EmployerResourses\AddVacancyWindow.xaml" />
+    <Page Include="EmployerResourses\ChangeVacancyWindow.xaml" />
+    <Page Include="EmployerResourses\EmployerAccountMenu.xaml" />
+    <Page Include="EmployerResourses\EmployerWatchResponseWindow.xaml" />
+    <Page Include="EmployerResourses\SettingsWindow.xaml" />
+    <Page Include="MainResourses\AuthPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="EmployerResourses\AddVacancyWindow.xaml" />
-    <Page Include="EmployerResourses\EmployerAccountMenu.xaml" />
-    <Page Include="MainWindow.xaml" />
-    <Page Include="RegistrationPage.xaml" />
+    <Page Include="MainResourses\MainWindow.xaml" />
+    <Page Include="MainResourses\OrganizationRegistrationPage.xaml" />
+    <Page Include="MainResourses\RegistrationPage.xaml" />
     <Page Include="StudentResourses\AccountMenu.xaml" />
-    <Page Include="VacancyListPage.xaml" />
+    <Page Include="StudentResourses\AddEditSummaryWindow.xaml" />
+    <Page Include="StudentResourses\StudentSettingsWindow.xaml" />
+    <Page Include="StudentResourses\StudentWatchStatusWindow.xaml" />
+    <Page Include="StudentResourses\VacancyListPage.xaml" />
+    <Page Include="StudentResourses\WatchVacancyWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -130,5 +175,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

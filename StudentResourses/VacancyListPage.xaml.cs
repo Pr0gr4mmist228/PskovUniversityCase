@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.ComponentModel;
 using PskovUniversityCase.StudentResourses;
+using System.Windows.Threading;
 
 namespace PskovUniversityCase
 {
@@ -40,6 +41,15 @@ namespace PskovUniversityCase
 			this.student = student;
 			
 			textCountVac.Text += " " + vac.Count;
+			
+			DispatcherTimer timer = new DispatcherTimer();
+			timer.Interval = TimeSpan.FromSeconds(5);
+			timer.Tick += UpdateList;
+			timer.Start();
+		}
+		
+		void UpdateList(object sender, object e){
+			vacanciesList.ItemsSource = vac;
 		}
 		
 		void ButtonVacancyAcc_Click(object sender, RoutedEventArgs e)
